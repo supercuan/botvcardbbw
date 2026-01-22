@@ -105,10 +105,10 @@ async function processQueue() {
   const { col, label } = COMMANDS[type];
 
   try {
-    await bot.sendMessage(chatId, "⏳ Sebentar...");
+    await bot.sendMessage(chatId, "📥 cek japri ya bebsss...");
 
     // WAJIB TEST DM
-    await bot.sendMessage(userId, "📦 Sabar...");
+    await bot.sendMessage(userId, "📦 Ini yaa boskuu 🤩");
 
     const res = await sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
@@ -120,7 +120,7 @@ async function processQueue() {
       .filter(v => v.length >= 10);
 
     if (numbers.length < take) {
-      await bot.sendMessage(chatId, "❌ Stok tidak cukup");
+      await bot.sendMessage(chatId, "❌ Stok kureng nihh boskuuu");
       busy = false;
       return processQueue();
     }
@@ -170,7 +170,7 @@ END:VCARD`
       });
     }
 
-    await bot.sendMessage(userId, "✅ VCARD dikirim semua");
+    await bot.sendMessage(userId, "✅ Done ya bebsss, semangat yaa 🥰");
 
   } catch (e) {
     console.error("❌ ERROR:", e);
@@ -205,8 +205,9 @@ bot.on("message", msg => {
     take: parseInt(m[2], 10),
   });
 
-  bot.sendMessage(chatId, "📥 Cek japri ea");
+  bot.sendMessage(chatId, "⏳ waitt yaa bebsss");
   processQueue();
 });
 
 console.log("🤖 BOT FINAL FIX — FILE PASTI TERKIRIM");
+
